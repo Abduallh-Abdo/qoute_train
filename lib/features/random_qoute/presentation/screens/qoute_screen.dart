@@ -16,45 +16,45 @@ class QouteScreen extends StatefulWidget {
 }
 
 class _QouteScreenState extends State<QouteScreen> {
-  // _getRandomQoute() =>
-  //     BlocProvider.of<RandomQouteCubit>(context).getRandomQoute();
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _getRandomQoute();
-  // }
+  _getRandomQoute() =>
+      BlocProvider.of<RandomQouteCubit>(context).getRandomQoute();
+  @override
+  void initState() {
+    super.initState();
+    _getRandomQoute();
+  }
 
-  // Widget _buildContent() {
-  //   return BlocBuilder<RandomQouteCubit, RandomQouteState>(
-  //     builder: (context, state) {
-  //       if (state is RandomQouteLoading) {
-  //         return Center(
-  //           child: SpinKitDoubleBounce(
-  //             color: AppColors.primary,
-  //           ),
-  //         );
-  //       } else if (state is RandomQouteError) {
-  //         return const CircularProgressIndicator();
-  //       } else if (state is RandomQouteLoaded) {
-  //         return Column(
-  //           children: [
-  //             QouteContent(
-  //               qoute: state.qoute,
-  //             ),
-  //             InkWell(
-  //               onTap: () => _getRandomQoute(),
-  //               child: const QouteRefresh(),
-  //             ),
-  //           ],
-  //         );
-  //       } else {
-  //         return SpinKitDoubleBounce(
-  //           color: AppColors.primary,
-  //         );
-  //       }
-  //     },
-  //   );
-  // }
+  Widget _buildContent() {
+    return BlocBuilder<RandomQouteCubit, RandomQouteState>(
+      builder: (context, state) {
+        if (state is RandomQouteLoading) {
+          return Center(
+            child: SpinKitDoubleBounce(
+              color: AppColors.primary,
+            ),
+          );
+        } else if (state is RandomQouteError) {
+          return const CircularProgressIndicator();
+        } else if (state is RandomQouteLoaded) {
+          return Column(
+            children: [
+              QouteContent(
+                qoute: state.qoute,
+              ),
+              InkWell(
+                onTap: () => _getRandomQoute(),
+                child: const QouteRefresh(),
+              ),
+            ],
+          );
+        } else {
+          return SpinKitDoubleBounce(
+            color: AppColors.primary,
+          );
+        }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,16 +68,13 @@ class _QouteScreenState extends State<QouteScreen> {
         ),
       ),
     );
-    
-    return const Scaffold(
-      body: ErrorScreen(),
+
+    return RefreshIndicator(
+      onRefresh: () => _getRandomQoute(),
+      child: Scaffold(
+        appBar: appBar,
+        body: _buildContent(),
+      ),
     );
-    // return RefreshIndicator(
-    //   onRefresh: () => _getRandomQoute(),
-    //   child: Scaffold(
-    //     appBar: appBar,
-    //     body: _buildContent(),
-    //   ),
-    // );
   }
 }
