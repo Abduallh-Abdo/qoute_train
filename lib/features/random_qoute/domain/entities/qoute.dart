@@ -13,5 +13,5 @@ class Qoute extends Equatable {
     required this.permalink,
   });
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [auther, qouteContent, id, permalink] ;
 }

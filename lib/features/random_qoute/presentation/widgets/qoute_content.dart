@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:qoute_train/core/utils/app_colors.dart';
 import 'package:qoute_train/core/utils/media_query_values.dart';
+import 'package:qoute_train/features/random_qoute/domain/entities/qoute.dart';
 
 class QouteContent extends StatelessWidget {
-  const QouteContent({super.key});
+  final Qoute qoute;
+  const QouteContent({super.key, required this.qoute});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class QouteContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'matiral alfknsllsnvdslv sdlhnskdj sjnfsjd  sdfhfdhd s dfhdfhz ',
+            qoute.qouteContent,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
@@ -26,7 +28,7 @@ class QouteContent extends StatelessWidget {
             height: context.height / 15,
           ),
           Text(
-            'bill Gits',
+            qoute.auther,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
