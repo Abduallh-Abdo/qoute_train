@@ -1,5 +1,5 @@
 const imagePath = 'assets/images';
 
-abstract class ImgAssets{
-  //  static String main='$imagePath/main.png' 
+abstract class ImgAssets {
+  static String qouteImage = '$imagePath/quote.png';
 }

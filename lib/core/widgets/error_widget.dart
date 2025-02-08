@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qoute_train/config/locale/app_localizations.dart';
 import 'package:qoute_train/core/utils/app_colors.dart';
 import 'package:qoute_train/core/utils/media_query_values.dart';
 
@@ -22,7 +23,7 @@ class ErrorScreen extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(vertical: 6),
           child: Text(
-            'Some Thing Went Wrong',
+            AppLocalizations.of(context)!.translate('something_went_wrong')!,
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
@@ -32,9 +33,9 @@ class ErrorScreen extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 12),
-          child: const Text(
-            'Please Try Again',
-            style: TextStyle(
+          child: Text(
+            AppLocalizations.of(context)!.translate('try_again')!,
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Colors.grey,
@@ -52,9 +53,9 @@ class ErrorScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
-            child: const Text(
-              'Reload Screen',
-              style: TextStyle(
+            child:  Text(
+              AppLocalizations.of(context)!.translate('reload_screen')!,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

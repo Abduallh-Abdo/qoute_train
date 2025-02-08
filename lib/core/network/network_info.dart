@@ -4,10 +4,10 @@ abstract class NetworkInfo {
   Future<bool> get isConnected;
 }
 
-class NetworkIfnoImpl implements NetworkInfo {
-  InternetConnection internetConnection;
+class NetworkInfoImpl implements NetworkInfo {
+ final InternetConnection internetConnection;
 
-  NetworkIfnoImpl({
+  NetworkInfoImpl({
     required this.internetConnection,
   });
 
