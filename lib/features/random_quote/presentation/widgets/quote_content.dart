@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:qoute_train/core/utils/app_colors.dart';
 import 'package:qoute_train/core/utils/media_query_values.dart';
-import 'package:qoute_train/features/random_quote/domain/entities/quote.dart';
+import 'package:qoute_train/features/random_quote/domain/entities/quote_entity.dart';
 
 class QuoteContent extends StatelessWidget {
-  final Quote quote;
+  final QuoteEntity quote;
   const QuoteContent({super.key, required this.quote});
 
   @override

@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qoute_train/core/error/failure.dart';
 import 'package:qoute_train/core/usecases/usecase.dart';
 import 'package:qoute_train/core/utils/app_strings.dart';
-import 'package:qoute_train/features/random_quote/domain/entities/quote.dart';
+import 'package:qoute_train/features/random_quote/domain/entities/quote_entity.dart';
 import 'package:qoute_train/features/random_quote/domain/usecases/get_random_quote.dart';
 part 'random_quote_state.dart';
 
@@ -32,7 +32,8 @@ class RandomQuoteCubit extends Cubit<RandomQuoteState> {
     log('init get random quote');
 
     try {
-      Either<Failure, Quote> response = await getRandomQouteUseCase(NoParams());
+      Either<Failure, QuoteEntity> response =
+          await getRandomQouteUseCase(NoParams());
       emit(
         response.fold(
           (failure) {

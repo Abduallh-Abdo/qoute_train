@@ -4,7 +4,7 @@ import 'package:qoute_train/core/error/failure.dart';
 import 'package:qoute_train/core/network/network_info.dart';
 import 'package:qoute_train/features/random_quote/data/datasourses/random_quote_local_data_source.dart';
 import 'package:qoute_train/features/random_quote/data/datasourses/random_quote_remote_data_source.dart';
-import 'package:qoute_train/features/random_quote/domain/entities/quote.dart';
+import 'package:qoute_train/features/random_quote/domain/entities/quote_entity.dart';
 import 'package:qoute_train/features/random_quote/domain/repositories/quote_repository.dart';
 
 class QuoteRepositoryImpl implements QuoteRepository {
@@ -19,7 +19,7 @@ class QuoteRepositoryImpl implements QuoteRepository {
   });
 
   @override
-  Future<Either<Failure, Quote>> getRandomQuote() async {
+  Future<Either<Failure, QuoteEntity>> getRandomQuote() async {
     if (await networkInfo.isConnected) {
       try {
         final remoteRandomQuote =

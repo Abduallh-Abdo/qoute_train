@@ -1,6 +1,6 @@
-import 'package:qoute_train/features/random_quote/domain/entities/quote.dart';
+import 'package:qoute_train/features/random_quote/domain/entities/quote_entity.dart';
 
-class QuoteModel extends Quote {
+class QuoteModel extends QuoteEntity {
   //!both method is correct
   // const QuoteModel(
   //     {required String auther,

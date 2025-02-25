@@ -12,7 +12,7 @@ class RandomQuoteInitial extends RandomQuoteState {}
 class RandomQuoteLoading extends RandomQuoteState {}
 
 class RandomQuoteLoaded extends RandomQuoteState {
-  final Quote quote;
+  final QuoteEntity quote;
 
   const RandomQuoteLoaded({required this.quote});
 

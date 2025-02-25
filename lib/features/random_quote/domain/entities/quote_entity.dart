@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class Quote extends Equatable {
+class QuoteEntity extends Equatable {
   final String author;
   final String quoteContent;
   final String id;
@@ -8,7 +8,7 @@ class Quote extends Equatable {
   // final String dateModified;
   // final List<String> tags;
 
-  const Quote({
+  const QuoteEntity({
     required this.author,
     required this.quoteContent,
     required this.id,

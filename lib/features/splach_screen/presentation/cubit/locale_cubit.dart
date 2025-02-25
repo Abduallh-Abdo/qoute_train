@@ -30,7 +30,7 @@ class LocaleCubit extends Cubit<LocaleState> {
     response.fold(
       (failure) => log(AppStrings.cacheFailure),
       (value) {
-        currentLangCode = value!;
+        currentLangCode = value;
         emit(ChangeLocaleState(selectLocale: Locale(currentLangCode)));
       },
     );
